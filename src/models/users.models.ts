@@ -12,24 +12,11 @@ const userSchema = new mongoose.Schema(
     },
     phoneNumber: { type: String, trim: true },
     photo_Url: { type: String },
-    disabled: { type: Boolean, required: true, default: false, select: false },
-    deleted: { type: Boolean, required: true, default: false, select: false },
-    refreshToken: { type: String, default: null, select: false },
+    status: { type: Boolean, required: true, default: false, select: false },
+    bioDetails: { type: String, default: null, select: false },
     password: { type: String, required: false, default: null, select: false },
-    auth_code: {
-      type: Number,
-      required: true,
-      default: null,
-      trim: true,
-      select: false,
-    },
-
-    // chamas: [
-    //   {
-    //     chama: { type: mongoose.Schema.Types.ObjectId, ref: "Chama" },
-    //     balance: { type: Number, required: true, default: 0 },
-    //   },
-    // ],
+    role: { type: Number, trim: true, required: true, default: 1 },
+    calendar: { type: Object }, // to be updated later
   },
   {
     timestamps: true,
